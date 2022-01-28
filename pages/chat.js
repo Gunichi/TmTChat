@@ -4,6 +4,8 @@ import appConfig from '../config.json';
 import { createClient } from '@supabase/supabase-js'
 import { useRouter } from 'next/router';
 import { ButtonSendSticker } from '../src/components/ButtonSendSticker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzM3Mzc3NCwiZXhwIjoxOTU4OTQ5Nzc0fQ.Hy_E7y91I_NVFGZBHNbSEb8_6SGvyTidgC-QVxOMKc4';
 const SUPABASE_URL = 'https://xbpdygedadtomuloxmav.supabase.co'
@@ -85,7 +87,7 @@ export default function ChatPage() {
           styleSheet={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             backgroundColor: appConfig.theme.colors.primary[500],
-            backgroundImage: `url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)`,
+            backgroundImage: `url(https://wallpaperxyz.com/wp-content/uploads/Gif-Animated-Wallpaper-Background-Full-HD-Free-Download-for-PC-Macbook-261121-Wallpaperxyz.com-38.gif)`,
             backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
             color: appConfig.theme.colors.neutrals['000']
           }}
@@ -97,7 +99,7 @@ export default function ChatPage() {
               flex: 1,
               boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
               borderRadius: '5px',
-              backgroundColor: appConfig.theme.colors.neutrals[700],
+              backgroundColor: '#13262f',
               height: '100%',
               maxWidth: '95%',
               maxHeight: '95vh',
@@ -111,7 +113,7 @@ export default function ChatPage() {
                 display: 'flex',
                 flex: 1,
                 height: '80%',
-                backgroundColor: appConfig.theme.colors.neutrals[600],
+                backgroundColor: '#213d4a',
                 flexDirection: 'column',
                 borderRadius: '5px',
                 padding: '16px',
@@ -156,6 +158,27 @@ export default function ChatPage() {
                     marginRight: '12px',
                     color: appConfig.theme.colors.neutrals[200],
                   }}
+                />
+                <Button 
+                styleSheet={{
+                    borderRadius: '50%',
+                    padding: '0px 0px 3px 0px',
+                    minWidth: '50px',
+                    minHeight: '50px',
+                    fontSize: '20px',
+                    marginBottom: '8px',
+                    lineHeight: '0',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: appConfig.theme.colors.neutrals[300],
+                    marginRight: '5px'
+                  }}
+                    label='Enviar'
+                    onClick={(event) => {
+                        event.preventDefault();
+                        handleNovaMensagem(mensagem);
+                    }} 
                 />
                 <ButtonSendSticker 
                     onStickerClick={(sticker) => {
@@ -212,7 +235,7 @@ export default function ChatPage() {
                     padding: '6px',
                     marginBottom: '12px',
                     hover: {
-                      backgroundColor: appConfig.theme.colors.neutrals[700],
+                      backgroundColor: '#13262f',
                     }
                   }}
                 >
